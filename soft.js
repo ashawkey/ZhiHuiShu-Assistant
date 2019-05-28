@@ -28,29 +28,28 @@
 				await sleep(delay / 5)
 				$('.current_play').nextAll('.video')[0].click()
         
-        if (!/1\.5/.test($('.speedBox').attr('style'))) {
+        			if (!/1\.5/.test($('.speedBox').attr('style'))) {
 				  console.log('提升到1.5倍速')
 				  $('.speedTab15').click()
-			  }
+			  	}
 
-		  	else if (!/liuchang/.test($('.definiBox').attr('style'))) {
+		  		else if (!/liuchang/.test($('.definiBox').attr('style'))) {
 				  console.log('更改画质')
 				  $('.line1bq').click()
-			  }
+			  	}
 
-			  else if ($('.volumeBox').find('.passVolume').width() != 0) {
+			  	else if ($('.volumeBox').find('.passVolume').width() != 0) {
 				  console.log('静音')
 				  $('.volumeIcon').click()
-			  }
+			  	}
 			
-			  else if ($('.playButton').length > 0) {
+			  	else if ($('.playButton').length > 0) {
 				  const delay = Math.floor(Math.random() * MAX_DELAY * 1000) + 100
 				  console.log('发现暂停, 将在' + delay / 10000 + ' 秒后播放')
 				  await sleep(delay / 10)
 				  $('.playButton').click()
-			  }
+			  	}
 			}
-		
 			await sleep(CHECK_INTERVAL * 1000)
 		}
 	}
