@@ -1,4 +1,4 @@
-
+// force mode
 (function () {
 	const MAX_DELAY = 10 // max delay in second
 	const CHECK_INTERVAL = 1 // loop interval in second
