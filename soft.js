@@ -7,7 +7,24 @@
 
 	const start = async function () {
 		console.log('智慧树助手已启动')
-
+		if (!/1\.5/.test($('.speedBox').attr('style'))) {
+		  console.log('提升到1.5倍速')
+	          $('.speedTab15').click()
+		}
+ 		if (!/liuchang/.test($('.definiBox').attr('style'))) {
+		  console.log('更改画质')
+		  $('.line1bq').click()
+	  	}
+	  	if ($('.volumeBox').find('.passVolume').width() != 0) {
+		  console.log('静音')
+		  $('.volumeIcon').click()
+	  	}
+	  	if ($('.playButton').length > 0) {
+		  const delay = Math.floor(Math.random() * MAX_DELAY * 1000) + 100
+		  console.log('发现暂停, 将在' + delay / 10000 + ' 秒后播放')
+		  await sleep(delay / 10)
+		  $('.playButton').click()
+	  	}
 		while (true) {
 			console.log('正在检查')
 			
@@ -27,7 +44,9 @@
 				console.log('本节完成，' + delay / 5000 + ' 秒后将切到下一课')
 				await sleep(delay / 5)
 				$('.current_play').nextAll('.video')[0].click()
-        
+        			
+				await sleep(CHECK_INTERVAL * 5000)
+				
         			if (!/1\.5/.test($('.speedBox').attr('style'))) {
 				  console.log('提升到1.5倍速')
 				  $('.speedTab15').click()
